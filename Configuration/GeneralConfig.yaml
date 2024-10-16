@@ -1,0 +1,52 @@
+application_type : "Main"   #Main or Slave
+execution_type : 10       #MessageBroker = 10 or Schedular = 11
+publish_result_type: "B2B"  # "sftp" or "b2b" or "none"
+rabbitmq_setting:
+  isenabled : 0
+  host_name : "10.11.2.139"
+  port : 5672
+  virtual_host : "/"
+  username : "serviceplatform"
+  password : "serviceplatform"
+  exchange_name : "DIexchange"
+  queue_name : "DITaskqueue"
+  deadletter_exchange_name : "DeadLetterExchange"
+  deadletter_queue_name : "DeadLetterQueue"
+source_db_setting:
+   host : 10.11.0.151
+   port : 5432
+   database : source_amisp
+   user : spadmin
+   password : "sml123"
+   maxconn: 2
+   options: '-c search_path=amispsource'
+db_setting:
+   host : 10.11.0.151
+   port : 5432
+   database : dynamicindexing
+   user : dcadmin
+   password : "sml123"
+   maxconn: 2
+   options: '-c search_path=dynamicci'
+b2b_settings:
+   api_url: https://middleware-dev.secure.online:14083/api/amisp/
+   username : MIDDLEUSER
+   password : "System@123"
+   RequestedAction: DTToConsumerTagging
+   UtilityCode: NBPD
+   Source: 0
+   chunk_size: 100
+sftp_settings:
+   sftp_enable: 0   # 1 to upload result data on sftp else 0, provide configurations if 1
+   sftp_host: '10.11.0.151'
+   sftp_port: 22  # Default port for SFTP
+   sftp_username: 'sftpusr'
+   sftp_password: 'sml123'
+   sftp_remote_path: '/sftpusr'  #use single forward slash
+   file_format: 'excel' #'excel' or 'csv'   
+log_setting:
+   loglevel : 1  #1=DEBUG, 2=ERROR         DEBUG > ERROR
+   log_to_console: False
+   # logpath : '/home/bddml/DynamicCI_Redesign/DynamicIndexinglog/'
+   # logpath : 'D:\\Downloads\\PredictionModule_upsert\\PredictionModule_upsert\\DynamicIndexinglog\\'
+      
