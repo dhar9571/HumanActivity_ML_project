@@ -7,7 +7,7 @@ import pandas as pd
 import pandas.io.sql as pndsql
 import psycopg2
 import psycopg2.extras as extras
-from Utils.common_dto import *
+# from Utils.common_dto import *
 import datetime
 
 
