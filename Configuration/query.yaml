@@ -1,0 +1,2 @@
+get_all_data: >
+    select * from sensor_data order by subject;

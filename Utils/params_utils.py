@@ -74,18 +74,6 @@ class ParamsUtils:
         with open(__parsed_args.config, "w") as yaml_file:
             yaml.dump(aConfiguration, yaml_file)
 
-				
-    @classmethod
-    def add_columns_to_distinguish_different_conf(self, df,input_value_type,type_of_distance,\
-        power_on_off_status,module_option = 0):
-        if df is not None:
-            df["input_value_type"] = input_value_type
-            df["type_of_distance"] = type_of_distance
-            df["power_on_off_status"] = power_on_off_status
-            df["moduleoption"] = module_option 
-        #End of if
-
-        return df
     		
     @classmethod
     def get_week_of_month(self, date, end_date):

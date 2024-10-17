@@ -1,30 +1,14 @@
-import numpy as np 
-import pandas as pd
+from Operation.processor import processor
 
-def prepare_data():
-    
-    cnt = 1
 
-    df = pd.read_csv("C:\\Users\\dk957\\Downloads\\archive (2)\\train.csv")
 
-    columns = [column for column in df.columns]
-
-    # for column in df.columns:
-    #     if cnt < 562:
-    #         string = f"{column.replace(',','-')}"
-    #         columns.append(string)
-    #         cnt += 1
-    #     elif cnt == 562:
-    #         string = f"{column.replace(',','-')}"
-    #         columns.append(string)
-    #         cnt += 1
-    #     else:
-    #         string = f"{column.replace(',','-')} text"
-    #         columns.append(string)
-    #         cnt += 1
+def main():
+    try:
+        processor()
         
-    return columns
-            
-if __name__ == '__main__':
-    prepare_data()
-
+    except Exception as e:
+        print(f"Exception caught {e}")
+    
+    
+if __name__ == "__main__":
+    main()

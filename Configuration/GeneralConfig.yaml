@@ -1,6 +1,14 @@
+db_setting:
+   database : 'humanActivity'
+   port : 5432
+   host : 'localhost'
+   password : 'Kabirsingh@123'
+   user : 'postgres'
+   schema_name : 'master'
+    
 log_setting:
    loglevel : 1  #1=DEBUG, 2=ERROR         DEBUG > ERROR
-   log_to_console: False
-   # logpath : '/home/bddml/DynamicCI_Redesign/DynamicIndexinglog/'
-   # logpath : 'D:\\Downloads\\PredictionModule_upsert\\PredictionModule_upsert\\DynamicIndexinglog\\'
+   log_to_console: True
+   logpath : 'C:\Users\dk957\OneDrive\Desktop\HumanActivity_ML\'
+      
       
